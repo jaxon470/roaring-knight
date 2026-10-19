@@ -10,11 +10,17 @@ There is also a practice mode where you can pick any of the Knight's attacks and
 
 You need a keyboard.
 
-- Arrow keys: move
+- Arrow keys or WASD: move
 - Z or Enter: confirm
 - X or Shift: cancel
 - F4: fullscreen
 - Hold Esc: back to the menu
+
+## Play from a ZIP
+
+Download and extract `Roaring-Knight.zip`, then open `index.html` in a browser. The ZIP includes the resource bundles needed to play without an internet connection or a local web server.
+
+To build the ZIP from this repository, run `python3 tools/build_zip.py`. The archive is created at `dist/Roaring-Knight.zip`.
 
 ## Credits
 

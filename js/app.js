@@ -211,7 +211,8 @@
   function key(e) {
     const k = e.keyCode;
     if (e.repeat) return;
-    const up = k === 38, down = k === 40, left = k === 37, right = k === 39;
+    const up = k === 38 || k === 87, down = k === 40 || k === 83;
+    const left = k === 37 || k === 65, right = k === 39 || k === 68;
     const ok = k === 90 || k === 13, back = k === 88 || k === 16 || k === 27;
     if (menu.screen === 'main') {
       if (up || down) { menu.sel = (menu.sel + (down ? 1 : MAIN.length - 1)) % MAIN.length; sfx(A.move); }
@@ -233,7 +234,7 @@
   }
   JF.keyFilter = (e) => {
     if (JF.running) return false;
-    if ([37, 38, 39, 40, 13, 16, 27, 88, 90].includes(e.keyCode)) e.preventDefault();
+    if ([37, 38, 39, 40, 65, 68, 83, 87, 13, 16, 27, 88, 90].includes(e.keyCode)) e.preventDefault();
     GM.audio.resume();
     if (A) key(e);
     return true;
